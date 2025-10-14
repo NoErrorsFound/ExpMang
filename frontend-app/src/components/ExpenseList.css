@@ -1,0 +1,155 @@
+/* Expense List Styles */
+.expense-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.expense-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.25rem;
+  background: #f7fafc;
+  border-radius: 12px;
+  transition: transform 0.2s, box-shadow 0.2s;
+  border: 2px solid transparent;
+}
+
+.expense-item:hover {
+  transform: translateX(4px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  border-color: #e2e8f0;
+}
+
+.expense-icon {
+  font-size: 2rem;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  border-radius: 10px;
+  flex-shrink: 0;
+}
+
+.expense-details {
+  flex: 1;
+  min-width: 0;
+}
+
+.expense-details h4 {
+  margin: 0 0 0.5rem;
+  color: #2d3748;
+  font-size: 1.1rem;
+  font-weight: 600;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.expense-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  font-size: 0.875rem;
+  color: #718096;
+}
+
+.expense-type,
+.expense-payment,
+.expense-date {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.25rem 0.75rem;
+  background: white;
+  border-radius: 6px;
+  font-weight: 500;
+}
+
+.expense-amount {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #2d3748;
+  margin-right: 1rem;
+  flex-shrink: 0;
+}
+
+.expense-actions {
+  display: flex;
+  gap: 0.5rem;
+  flex-shrink: 0;
+}
+
+.expense-edit-form {
+  width: 100%;
+  padding: 1rem;
+  background: white;
+  border-radius: 8px;
+}
+
+.expense-edit-form .form-actions {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: flex-end;
+  margin-top: 1rem;
+}
+
+.no-expenses {
+  text-align: center;
+  padding: 4rem 2rem;
+  color: #718096;
+}
+
+.no-expenses-icon {
+  font-size: 4rem;
+  display: block;
+  margin-bottom: 1rem;
+  opacity: 0.5;
+}
+
+.no-expenses h3 {
+  margin: 0 0 0.5rem;
+  color: #4a5568;
+  font-size: 1.5rem;
+}
+
+.no-expenses p {
+  margin: 0;
+  font-size: 1rem;
+}
+
+@media (max-width: 768px) {
+  .expense-item {
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+
+  .expense-icon {
+    font-size: 1.5rem;
+    width: 40px;
+    height: 40px;
+  }
+
+  .expense-details h4 {
+    font-size: 1rem;
+  }
+
+  .expense-amount {
+    font-size: 1.25rem;
+    width: 100%;
+    order: -1;
+    text-align: right;
+  }
+
+  .expense-meta {
+    font-size: 0.8125rem;
+  }
+
+  .expense-actions {
+    width: 100%;
+    justify-content: flex-end;
+  }
+}

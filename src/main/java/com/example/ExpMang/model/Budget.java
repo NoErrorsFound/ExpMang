@@ -1,6 +1,8 @@
 package com.example.ExpMang.model;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
 
 import java.util.Date;
@@ -10,6 +12,7 @@ import java.util.List;
 public class Budget {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @JsonProperty("budgetid")
     private Long budgetid;
     @JsonFormat(pattern="yyyy-MM-dd")
     private Date startDate;
@@ -78,9 +81,11 @@ public class Budget {
         this.amountUsed += expense.getAmount();
     }
 
+    @JsonIgnore
     @OneToOne
     private User user;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "budget", cascade = CascadeType.ALL)
     private List<Expense> expenses;
 }

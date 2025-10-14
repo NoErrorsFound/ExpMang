@@ -1,5 +1,7 @@
 package com.example.ExpMang.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
 
 import java.util.Date;
@@ -8,6 +10,7 @@ import java.util.Date;
 public class Expense {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @JsonProperty("expenseid")
     private Long expenseid;
     private int amount;
     private Date date;
@@ -94,6 +97,7 @@ public class Expense {
                 '}';
     }
 
+    @JsonIgnore
     @ManyToOne
     private Budget budget;
 }

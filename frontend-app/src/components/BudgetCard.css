@@ -1,0 +1,161 @@
+/* Budget Card Styles */
+.budget-card {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+}
+
+.budget-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid #e2e8f0;
+}
+
+.budget-card-header h3 {
+  margin: 0;
+  color: #2d3748;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.budget-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.budget-card-body {
+  color: #2d3748;
+}
+
+.budget-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.stat-label {
+  font-size: 0.875rem;
+  color: #718096;
+  font-weight: 500;
+}
+
+.stat-value {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #2d3748;
+}
+
+.stat-value.over-budget {
+  color: #e53e3e;
+}
+
+.stat-value.remaining-positive {
+  color: #38a169;
+}
+
+.budget-progress {
+  margin-bottom: 1.5rem;
+}
+
+.progress-bar {
+  height: 12px;
+  background: #e2e8f0;
+  border-radius: 6px;
+  overflow: hidden;
+  margin-bottom: 0.5rem;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+  transition: width 0.3s ease;
+  border-radius: 6px;
+}
+
+.progress-fill.over-budget {
+  background: linear-gradient(90deg, #fc8181 0%, #e53e3e 100%);
+}
+
+.progress-text {
+  font-size: 0.875rem;
+  color: #718096;
+  font-weight: 600;
+}
+
+.budget-period {
+  padding: 1rem;
+  background: #f7fafc;
+  border-radius: 8px;
+  text-align: center;
+  color: #4a5568;
+  font-weight: 500;
+}
+
+.budget-edit-form {
+  padding: 1rem 0;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-group label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #4a5568;
+}
+
+.form-group input,
+.form-group select {
+  padding: 0.75rem;
+  border: 2px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.2s;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: #667eea;
+}
+
+.form-group input.error {
+  border-color: #e53e3e;
+}
+
+@media (max-width: 768px) {
+  .budget-stats {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .budget-card {
+    padding: 1.5rem;
+  }
+
+  .stat-value {
+    font-size: 1.5rem;
+  }
+}

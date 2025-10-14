@@ -1,0 +1,105 @@
+/* ===== Common Button Styles ===== */
+
+/* Icon Buttons (Edit & Delete) */
+button[title*="Edit"],
+button[title*="Delete"],
+button[title*="Save"],
+button[title*="Cancel"],
+.action-btn,
+.icon-button {
+  min-width: 44px;
+  min-height: 44px;
+  padding: var(--spacing-md);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-md);
+  border: none;
+  font-size: var(--font-size-lg);
+  cursor: pointer;
+  transition: all var(--transition-base);
+  font-family: var(--font-primary);
+  font-weight: var(--font-weight-medium);
+}
+
+/* Edit Button */
+button[title*="Edit"],
+.edit-button {
+  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+  color: white;
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+}
+
+button[title*="Edit"]:hover,
+.edit-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(59, 130, 246, 0.4);
+}
+
+/* Delete Button */
+button[title*="Delete"],
+.delete-button {
+  background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+  color: white;
+  box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3);
+}
+
+button[title*="Delete"]:hover,
+.delete-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(239, 68, 68, 0.4);
+}
+
+/* Save Button */
+button[title*="Save"],
+.save-button {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  color: white;
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+  padding: var(--spacing-md) var(--spacing-xl);
+}
+
+button[title*="Save"]:hover,
+.save-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(16, 185, 129, 0.4);
+}
+
+/* Cancel Button */
+button[title*="Cancel"],
+.cancel-button {
+  background: var(--color-bg-secondary);
+  color: var(--color-text-secondary);
+  border: 2px solid var(--color-border);
+  padding: var(--spacing-md) var(--spacing-xl);
+}
+
+button[title*="Cancel"]:hover,
+.cancel-button:hover {
+  background: var(--color-bg-tertiary);
+  border-color: var(--color-text-tertiary);
+  color: var(--color-text-primary);
+}
+
+/* Button Icon Sizing */
+button svg {
+  width: 20px;
+  height: 20px;
+}
+
+button.icon-only svg {
+  width: 24px;
+  height: 24px;
+}
+
+/* Active State */
+button:active {
+  transform: translateY(0) !important;
+}
+
+/* Disabled State */
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none !important;
+}

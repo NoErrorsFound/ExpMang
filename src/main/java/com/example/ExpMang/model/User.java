@@ -1,5 +1,7 @@
 package com.example.ExpMang.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -19,6 +21,8 @@ public class User implements UserDetails {
     private String userName;
 
     private String email;
+    
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private String password;
 
 
@@ -112,6 +116,7 @@ public class User implements UserDetails {
                 '}' ;
     }
 
+    @JsonIgnore
     @OneToOne(mappedBy = "user")
     private Budget budget;
 
